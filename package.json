@@ -1,0 +1,14 @@
+{
+  "name": "node2app",
+  "version": "1.0.0",
+  "description": "A node way to build C++ cross-platform apps.",
+  "main": "build.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michael Gehricke",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^12.0.2"
+  }
+}
