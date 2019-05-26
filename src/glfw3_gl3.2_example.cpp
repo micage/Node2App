@@ -11,6 +11,7 @@
 struct Vertex {
 	GLfloat x, y, z, nx, ny, nz, u0, v0;
 	Vertex() : x(0.0), y(0.0), z(0.0), nx(0.0), ny(0.0), nz(0.0), u0(0.0), v0(0.0){};
+	void setPosition(GLfloat _x, GLfloat _y, GLfloat _z) { x = _x; y = _y; z = _z; }
 };
 
 struct Mesh {
@@ -52,8 +53,7 @@ static void key_callback(GLFWwindow* window, int key, int scancode, int action, 
 	}
 }
 
-int main(void)
-{
+int main(void) {
 	int width = 600, height = 600;
 	const char *title = "glfwtest";
 	GLFWmonitor *monitor = NULL;
@@ -95,7 +95,7 @@ int main(void)
 	setup_shaders();
 	create_buffers();
 
-	glClearColor(0.5, 0.5, 0.5, 0.0);
+	glClearColor(0.5, 0.5, 0.7, 0.0);
 	glDisable(GL_DEPTH_TEST);
 	//glDisable(GL_CULL_FACE);
 
@@ -143,14 +143,11 @@ int main(void)
 		glfwSwapBuffers(_mainWindow);
 		glfwPollEvents();
 	}
+
 	glfwDestroyWindow(_mainWindow);
 	glfwTerminate();
 	exit(EXIT_SUCCESS);
 }
-
-
-
-
 
 void create_buffers(){
 	float width = 500.0, height = 500.0;
@@ -381,10 +378,6 @@ void setup_shaders(){
 		delete[] log;
 		log = NULL;
 	}
-
-
-
-
 
 	if (result == GL_FALSE)
 	{
