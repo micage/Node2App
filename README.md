@@ -1,6 +1,6 @@
 # Node2App
 
-##What to do
+## What to do
 Choose a directory.
 In that directory call "git clone https://github.com/micage/Node2app.git.
 Run "npm init"
